@@ -21,7 +21,7 @@ function PlugDat() {
 	this.setupChatHistory();
 
 	// Inject something into the page to mark that we're here
-	$("#room-name").append("ENABLED");
+	$("#header-global").append("<font id='TEXT' size='2'><font color='red'>ENABLED</font></font>");
 }
 
 
@@ -54,11 +54,11 @@ PlugDat.prototype.setupChatHistory = function() {
 
 PlugDat.prototype.startAutoWoot = function() {
 	// Press the button immediately so the user can see the effects
-	$("#dubup").click();
+	 $(".dubup").click();
 
 	// Start a timer to press the button every 45 seconds
 	this.autoWootTimer = setInterval( function() {
-		$("#dubup").click();
+		 $(".dubup").click();
 	}, 45000);
 }
 
@@ -75,7 +75,7 @@ PlugDat.prototype.cleanUp = function() {
 
 	this.isDisabled = true;
 
-	$("ENABLED").remove();
+	$("TEXT").remove();
 }
 
 
