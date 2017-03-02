@@ -4,6 +4,7 @@ function PlugDat() {
 
 	this.startAutoWoot();
 	this.setupChatHistory();
+	this.setupChatHandlers();
 
 	// Inject something into the page to mark that we're here
 	$("#header-global").append("<font id='DUBTRACK-TEXT' size='2'><font color='red'>ENABLED</font></font>");
@@ -32,6 +33,20 @@ PlugDat.prototype.setupChatHistory = function() {
 	});
 }
 
+PlugDat.prototype.setupChatHandlers = function() {
+	var _this = this;
+
+	if( this.justHandledTimers === undefined )
+		this.justHandledTimers = {};
+
+	API.on( API.CHAT, function(value) {
+		if( _this.isDisabled || value.fromID == API.getUser() )
+			return;
+
+		_this.chatHistory.push( value.message );
+		_this.iCurrentHistoryItem = _this.chatHistory.length;
+	});
+}
 
 PlugDat.prototype.startAutoWoot = function() {
 	// Press the button immediately so the user can see the effects
