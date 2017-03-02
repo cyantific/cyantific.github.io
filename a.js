@@ -14,10 +14,10 @@ PlugDat.prototype.setupChatHistory = function() {
 	var _this = this;
 
 	var updateChatFromHistory = function() {
-		$('chat-txt-message').val( _this.chatHistory[_this.iCurrentHistoryItem] );
+		$('#chat-txt-message').val( _this.chatHistory[_this.iCurrentHistoryItem] );
 	};
 
-	$('chat-txt-message').keydown(function(event){
+	$('#chat-txt-message').keydown(function(event){
 		if( event.keyCode != 38 && event.keyCode != 40 )
 			return;
 
