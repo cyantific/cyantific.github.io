@@ -1,5 +1,5 @@
 function PlugDat() {
-	this.chatHistory = [];
+	this.chatHistory = ["Hello", "World"];
 	this.iCurrentHistoryItem = 0;
 
 	this.startAutoWoot();
