@@ -61,3 +61,12 @@ PlugDat.prototype.cleanUp = function() {
 }
 
 
+if( document.PlugDat === undefined ) {
+	console.log( "Creating PlugDat" );
+	document.PlugDat = new PlugDat();
+} else {
+	console.log( "Destroying PlugDat" );
+	document.PlugDat.cleanUp();
+	document.PlugDat = undefined;
+}
+// -----------------------------------------------------------------
