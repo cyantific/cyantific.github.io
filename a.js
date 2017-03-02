@@ -95,7 +95,7 @@ PlugDat.prototype.setupChatHandlers = function() {
 		_this.iCurrentHistoryItem = _this.chatHistory.length;
 	});
 
-
+/*
 	API.on( API.CHAT_COMMAND, function(value) {
 		// If we're disabled, that means this is a callback sitting around from
 		// who knows when. Just do nothing.
@@ -144,7 +144,7 @@ PlugDat.prototype.setupChatHandlers = function() {
 		} // end for each command
 	}); // end API.on( API.CHAT_COMMAND )
 } // end setupChatHandlers()
-
+*/
 
 var commands = {
 	"/whatever": 			"¯\\_(?)_/¯",
