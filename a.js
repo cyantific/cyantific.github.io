@@ -6,9 +6,8 @@ function PlugDat() {
 	this.setupChatHistory();
 
 	// Inject something into the page to mark that we're here
-	$("#header-global").append("<font id='TEXT' size='2'><font color='red'>ENABLED</font></font>");
+	$("#header-global").append("<font id='DUBTRACK-TEXT' size='2'><font color='red'>ENABLED</font></font>");
 }
-
 
 PlugDat.prototype.setupChatHistory = function() {
 	var _this = this;
@@ -17,7 +16,7 @@ PlugDat.prototype.setupChatHistory = function() {
 		$('#chat-txt-message').val( _this.chatHistory[_this.iCurrentHistoryItem] );
 	};
 
-	$('#chat-txt-message').keydown(function(event){
+	$("#chat-txt-message").keydown(function(event){
 		if( event.keyCode != 38 && event.keyCode != 40 )
 			return;
 
@@ -31,6 +30,7 @@ PlugDat.prototype.setupChatHistory = function() {
 		if( event.keyCode == 40 && _this.iCurrentHistoryItem < _this.chatHistory.length ) {
 			_this.iCurrentHistoryItem += 1;
 		}
+
 		updateChatFromHistory();
 	});
 }
@@ -56,8 +56,7 @@ PlugDat.prototype.cleanUp = function() {
 	console.log( "Cleaning up PlugDat" );
 	this.stopAutoWoot();
 	this.isDisabled = true;
-
-	$("TEXT").remove();
+	$("DUBTRACK-TEXT").remove();
 }
 
 
