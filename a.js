@@ -20,9 +20,6 @@ PlugDat.prototype.setupChatHistory = function() {
 		if( event.keyCode != 38 && event.keyCode != 40 )
 			return;
 
-		if( _this.isDisabled )
-			return true;
-
 		if( event.keyCode == 38 && _this.iCurrentHistoryItem > 0) {
 			_this.iCurrentHistoryItem -= 1;
 		}
