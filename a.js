@@ -17,7 +17,7 @@ PlugDat.prototype.setupChatHistory = function() {
 		$('chat-txt-message').val( _this.chatHistory[_this.iCurrentHistoryItem] );
 	};
 
-	$("chat-txt-message").keydown(function(event){
+	$('chat-txt-message').keydown(function(event){
 		if( event.keyCode != 38 && event.keyCode != 40 )
 			return;
 
@@ -55,16 +55,12 @@ PlugDat.prototype.stopAutoWoot = function() {
 PlugDat.prototype.cleanUp = function() {
 	console.log( "Cleaning up PlugDat" );
 	this.stopAutoWoot();
-	this.stopAutoSkip();
-
 	this.isDisabled = true;
 
 	$("TEXT").remove();
 }
 
-// -----------------------------------------------------------------
-// Create or destroy ourselves depending on the current situation
-// -----------------------------------------------------------------
+
 if( document.PlugDat === undefined ) {
 	console.log( "Creating PlugDat" );
 	document.PlugDat = new PlugDat();
